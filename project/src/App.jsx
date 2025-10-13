@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
 import Todo from "./apps/TodoApp.jsx";
 import StopWatch from "./apps/StopWatch.jsx";
 import Counter from "./apps/Counter.jsx";
@@ -7,15 +7,35 @@ import ProductsFilter from "./apps/ProductsFilter.jsx";
 import CounterUse from "./apps/CounterUse.jsx";
 
 function App() {
+  // using NavLink to apply active styles (navlink calls a function with isActive property)
+  const activeClassStyle = ({ isActive }) => {
+    return {
+      fontWeight: isActive ? "bold" : "normal",
+      textDecoration: isActive ? "underline" : "none",
+      color: isActive ? "blue" : "black",
+    };
+  };
   return (
     <BrowserRouter>
       <nav style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
-        <Link to="/todo">Todo</Link>
-        <Link to="/stopwatch">StopWatch</Link>
-        <Link to="/counter">Counter</Link>
-        <Link to="/counterRed">CounterRed</Link>
-        <Link to="/productsFilter">ProductsFilter</Link>
-        <Link to="/counter-useContext">Counter UseContext</Link>
+        <NavLink style={activeClassStyle} to="/todo">
+          Todo
+        </NavLink>
+        <NavLink style={activeClassStyle} to="/stopwatch">
+          StopWatch
+        </NavLink>
+        <NavLink style={activeClassStyle} to="/counter">
+          Counter
+        </NavLink>
+        <NavLink style={activeClassStyle} to="/counterRed">
+          CounterRed
+        </NavLink>
+        <NavLink style={activeClassStyle} to="/productsFilter">
+          ProductsFilter
+        </NavLink>
+        <NavLink style={activeClassStyle} to="/counter-useContext">
+          Counter UseContext
+        </NavLink>
       </nav>
 
       <Routes>
