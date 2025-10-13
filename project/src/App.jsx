@@ -4,6 +4,7 @@ import StopWatch from "./apps/StopWatch.jsx";
 import Counter from "./apps/Counter.jsx";
 import CounterRed from "./apps/CounterRed.jsx";
 import ProductsFilter from "./apps/ProductsFilter.jsx";
+import CounterUse from "./apps/CounterUse.jsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Link to="/counter">Counter</Link>
         <Link to="/counterRed">CounterRed</Link>
         <Link to="/productsFilter">ProductsFilter</Link>
+        <Link to="/counter-useContext">Counter UseContext</Link>
       </nav>
 
       <Routes>
@@ -22,6 +24,7 @@ function App() {
         <Route path="/counter" element={<Counter />} />
         <Route path="/counterRed" element={<CounterRed />} />
         <Route path="/productsFilter" element={<ProductsFilter />} />
+        <Route path="/counter-useContext" element={<CounterUse />} />
       </Routes>
     </BrowserRouter>
   );
