@@ -1,11 +1,13 @@
 import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
-import Todo from "./apps/TodoApp.jsx";
-import StopWatch from "./apps/StopWatch.jsx";
-import Counter from "./apps/Counter.jsx";
-import CounterRed from "./apps/CounterRed.jsx";
-import ProductsFilter from "./apps/ProductsFilter.jsx";
-import CounterUse from "./apps/CounterUse.jsx";
-
+import Todo from "./pages/TodoApp.jsx";
+import StopWatch from "./pages/StopWatch.jsx";
+import Counter from "./pages/Counter.jsX";
+import CounterRed from "./pages/CounterRed.jsx";
+import ProductsFilter from "./pages/ProductsFilter.jsx";
+import CounterUse from "./pages/CounterUse.jsx";
+import Home from "./pages/Home.jsx";
+import PrivateRoutes from "./privateRoutes/index.jsx";
+import ProductDetails from "./pages/ProductDetails.jsx";
 function App() {
   // using NavLink to apply active styles (navlink calls a function with isActive property)
   const activeClassStyle = ({ isActive }) => {
@@ -18,6 +20,9 @@ function App() {
   return (
     <BrowserRouter>
       <nav style={{ display: "flex", gap: "10px", marginBottom: "20px" }}>
+        <NavLink style={activeClassStyle} to="/home">
+          Home
+        </NavLink>
         <NavLink style={activeClassStyle} to="/todo">
           Todo
         </NavLink>
@@ -39,12 +44,23 @@ function App() {
       </nav>
 
       <Routes>
+        <Route path="/home" element={<Home />} />
         <Route path="/todo" element={<Todo />} />
         <Route path="/stopwatch" element={<StopWatch />} />
         <Route path="/counter" element={<Counter />} />
         <Route path="/counterRed" element={<CounterRed />} />
+
         <Route path="/productsFilter" element={<ProductsFilter />} />
-        <Route path="/counter-useContext" element={<CounterUse />} />
+        <Route path="/product/:id" element={<ProductDetails />} />
+
+        <Route
+          path="/counter-useContext"
+          element={
+            <PrivateRoutes>
+              <CounterUse />
+            </PrivateRoutes>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

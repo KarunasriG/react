@@ -1,4 +1,4 @@
-import { useCount } from "../context/count-context.jsx";
+import { useCount } from "../context/countContext.jsx";
 import { Text } from "./Text.jsx";
 export const Button = () => {
   const { setCount } = useCount();

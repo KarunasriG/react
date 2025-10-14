@@ -1,6 +1,7 @@
 import { useReducer } from "react";
 import { products } from "../data/products.js";
 import { filterReducer } from "../reducers/filterReducer.jsx";
+import ProductCard from "../components/ProductCard.jsx";
 const ProductsFilter = () => {
   const initialState = {
     discount: 0,
@@ -45,22 +46,10 @@ const ProductsFilter = () => {
           placeholder="set your discount"
         />{" "}
         {/* <button>Apply Filter</button> */}
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
+        <div style={{ display: "flex", flexWrap: "wrap", marginTop: "20px" }}>
           {filterByDiscount.length > 0 &&
             filterByDiscount.map((product) => {
-              return (
-                <div
-                  key={product.id}
-                  style={{
-                    border: "1px solid black",
-                    margin: "5px",
-                    padding: "5px",
-                  }}
-                >
-                  {product.name} : {product.price}
-                  {product.discount && ` - ${product.discount}% off`}
-                </div>
-              );
+              return <ProductCard key={product.id} product={product} />;
             })}
         </div>
       </div>
