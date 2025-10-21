@@ -8,6 +8,7 @@ import CounterUse from "./pages/CounterUse.jsx";
 import Home from "./pages/Home.jsx";
 import PrivateRoutes from "./privateRoutes/index.jsx";
 import ProductDetails from "./pages/ProductDetails.jsx";
+import ClassComponent from "./components/classComponent.jsx";
 function App() {
   // using NavLink to apply active styles (navlink calls a function with isActive property)
   const activeClassStyle = ({ isActive }) => {
@@ -62,6 +63,9 @@ function App() {
           }
         />
       </Routes>
+      <>
+        <ClassComponent />
+      </>
     </BrowserRouter>
   );
 }
