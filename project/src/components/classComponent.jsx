@@ -5,6 +5,7 @@ import { Component } from "react";
  * Mount --> Update --> Unmount
  */
 
+/** 
 // when a coponent is mounted (i.e first created in DOM), it runs only once
 componentDidMount() {
   //   fetch data from an API
@@ -27,6 +28,8 @@ componentWillUnmount() {}
 
 // it runs when the component is mounted 
 componentDidMount() {}
+
+*/
 
 class Welcome extends Component {
   render() {

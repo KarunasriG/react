@@ -9,6 +9,8 @@ import Home from "./pages/Home.jsx";
 import PrivateRoutes from "./privateRoutes/index.jsx";
 import ProductDetails from "./pages/ProductDetails.jsx";
 import ClassComponent from "./components/classComponent.jsx";
+import HOCComponent from "./pages/HOCComponent.jsx";
+
 function App() {
   // using NavLink to apply active styles (navlink calls a function with isActive property)
   const activeClassStyle = ({ isActive }) => {
@@ -42,6 +44,9 @@ function App() {
         <NavLink style={activeClassStyle} to="/counter-useContext">
           Counter UseContext
         </NavLink>
+        <NavLink style={activeClassStyle} to="/hoc">
+          HOC
+        </NavLink>
       </nav>
 
       <Routes>
@@ -53,6 +58,8 @@ function App() {
 
         <Route path="/productsFilter" element={<ProductsFilter />} />
         <Route path="/product/:id" element={<ProductDetails />} />
+
+        <Route path="/hoc" element={<HOCComponent />} />
 
         <Route
           path="/counter-useContext"
