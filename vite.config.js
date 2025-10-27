@@ -4,5 +4,5 @@ import react from "@vitejs/plugin-react";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: "/react/project/", // 👈 important for GitHub Pages subpath
+  base: "/react/", // 👈 important for GitHub Pages subpath
 });
